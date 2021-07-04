@@ -57,7 +57,13 @@ public final class TermAccount extends Account implements Serializable{
     @Override
     public String toString() {
         
-        return "A PLAZO - ID: "+String.valueOf(super.getId())+"  Tipo de moneda: "+ String.valueOf(super.getCurrency())+"  Fecha de apertura: "+ new SimpleDateFormat("dd-MM-yyyy").format(super.getOpeningDate()) +"  Tasa de interes: "+ String.valueOf(interestRate)+"  Monto inicial: "+ String.valueOf(startingAmount)+"  Plazo: "+String.valueOf(term);
+        return "A PLAZO - ID: "+String.valueOf(super.getId())+"  Tipo de moneda: "+ String.valueOf(super.getCurrency())+"  Fecha de apertura: "+ new SimpleDateFormat("dd-MM-yyyy").format(super.getOpeningDate()) +"  Tasa de interes: "+ String.valueOf(interestRate)+"  Monto inicial: "+ String.valueOf(startingAmount)+"  Plazo: "+String.valueOf(term)+"/";
+    }
+    
+    @Override
+    public String toString2() {
+        
+        return "A PLAZO*"+String.valueOf(super.getId())+"*"+ String.valueOf(super.getCurrency())+"*"+ new SimpleDateFormat("dd-MM-yyyy").format(super.getOpeningDate()) +"*"+ String.valueOf(interestRate)+"*"+ String.valueOf(startingAmount)+"*"+String.valueOf(term)+"/";
     }
 
     /**

@@ -52,6 +52,6 @@ public abstract class Account {
         return "Account{" + "id=" + id + ", currency=" + currency + ", openingDate=" + openingDate.getDay()+"/"+openingDate.getMonth()+"/"+ openingDate.getYear()+1900+"/"+ ", clientID=" + clientID + '}';
     }
     
-    
+    public abstract String toString2();
 
 }

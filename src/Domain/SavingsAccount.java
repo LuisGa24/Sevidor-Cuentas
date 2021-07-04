@@ -93,8 +93,15 @@ public final class SavingsAccount extends Account implements Serializable{
     @Override
     public String toString() {
         
-            return "AHORROS - ID: "+String.valueOf(super.getId())+"  Tipo de moneda: "+ String.valueOf(super.getCurrency())+"  Fecha de apertura: "+  new SimpleDateFormat("dd-MM-yyyy").format(super.getOpeningDate()) +"  Tasa de interes: "+ String.valueOf(interestRate)+"  Estado: "+ String.valueOf(state)+"  Saldo: "+String.valueOf(balance);
+            return "AHORROS - ID: "+String.valueOf(super.getId())+"  Tipo de moneda: "+ String.valueOf(super.getCurrency())+"  Fecha de apertura: "+  new SimpleDateFormat("dd-MM-yyyy").format(super.getOpeningDate()) +"  Tasa de interes: "+ String.valueOf(interestRate)+"  Estado: "+ String.valueOf(state)+"  Saldo: "+String.valueOf(balance)+"/";
         
+       
+    }
+    
+    @Override
+    public String toString2() {
+        
+            return "AHORROS*"+String.valueOf(super.getId())+"*"+ String.valueOf(super.getCurrency())+"*"+  new SimpleDateFormat("dd-MM-yyyy").format(super.getOpeningDate()) +"*"+ String.valueOf(interestRate)+"*"+ String.valueOf(state)+"*"+String.valueOf(balance)+"/"; 
        
     }
     

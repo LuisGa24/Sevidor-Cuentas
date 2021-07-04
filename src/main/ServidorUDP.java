@@ -9,9 +9,12 @@ package main;
  * @author Jose
  */
 
+import Domain.Account;
 import Domain.SavingsAccount;
+import Domain.accountMaintenance;
 import java.io.*;
 import java.net.*;
+import java.util.LinkedList;
 
 public class ServidorUDP {
 
@@ -45,13 +48,29 @@ public class ServidorUDP {
                
                 String mensaje = new String(recibirPaquete.getData(), 0, recibirPaquete.getLength());
                 
-                System.out.println(mensaje);
+                String paqueteRecibido[] = mensaje.split("-");
+          
+                accountMaintenance am= new accountMaintenance();
                 
-                
+                 String mensaje2 = "";//Mensaje de retorno
+                 
+                if (paqueteRecibido.length == 1) {
+                    System.out.println("Número de cedula");
+                    LinkedList<Account>  list =  am.getAccountsByClientId(mensaje);
+                    mensaje2+=list.size()+"/";
+                    
+                    for (int i = 0; i < list.size(); i++) {
+                        Account a = list.get(i);
+                        mensaje2+=a.toString2();
+                    }
+                    
+                }
+
+
                 System.out.println("\n\nRepitiendo datos al cliente");
                 
 
-                String mensaje2 = "luiyuiyiuuyui123";
+               
                  byte[] datos2 = mensaje2.getBytes();
 
 
