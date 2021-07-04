@@ -42,15 +42,21 @@ public class ServidorUDP {
                 socket.receive(recibirPaquete); //esperar el paquete
 
 
-                SavingsAccount mensaje = SavingsAccount.fromByteArray(recibirPaquete.getData());
-                System.out.println(mensaje.toString());
+               
+                String mensaje = new String(recibirPaquete.getData(), 0, recibirPaquete.getLength());
                 
-                // Devolver el paquete recibido
-                // crear paquete a enviar
+                System.out.println(mensaje);
+                
+                
                 System.out.println("\n\nRepitiendo datos al cliente");
+                
 
-                DatagramPacket enviarPaquete = new DatagramPacket(recibirPaquete.getData(),
-                        recibirPaquete.getLength(), recibirPaquete.getAddress(),
+                String mensaje2 = "luiyuiyiuuyui123";
+                 byte[] datos2 = mensaje2.getBytes();
+
+
+                DatagramPacket enviarPaquete = new DatagramPacket(datos2,
+                        datos2.length, recibirPaquete.getAddress(),
                         recibirPaquete.getPort());
 
                 System.out.println("\nPaquete Enviado\n");
