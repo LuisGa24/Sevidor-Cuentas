@@ -101,7 +101,7 @@ public final class SavingsAccount extends Account implements Serializable{
     @Override
     public String toString2() {
         
-            return "AHORROS*"+String.valueOf(super.getId())+"*"+ String.valueOf(super.getCurrency())+"*"+  new SimpleDateFormat("dd-MM-yyyy").format(super.getOpeningDate()) +"*"+ String.valueOf(interestRate)+"*"+ String.valueOf(state)+"*"+String.valueOf(balance)+"/"; 
+            return "AHORROS#"+String.valueOf(super.getId())+"#"+ String.valueOf(super.getCurrency())+"#"+  new SimpleDateFormat("dd-MM-yyyy").format(super.getOpeningDate()) +"#"+ String.valueOf(interestRate)+"#"+ String.valueOf(state)+"#"+String.valueOf(balance)+"/"; 
        
     }
     

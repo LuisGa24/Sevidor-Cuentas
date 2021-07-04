@@ -63,7 +63,7 @@ public final class TermAccount extends Account implements Serializable{
     @Override
     public String toString2() {
         
-        return "A PLAZO*"+String.valueOf(super.getId())+"*"+ String.valueOf(super.getCurrency())+"*"+ new SimpleDateFormat("dd-MM-yyyy").format(super.getOpeningDate()) +"*"+ String.valueOf(interestRate)+"*"+ String.valueOf(startingAmount)+"*"+String.valueOf(term)+"/";
+        return "A PLAZO#"+String.valueOf(super.getId())+"#"+ String.valueOf(super.getCurrency())+"#"+ new SimpleDateFormat("dd-MM-yyyy").format(super.getOpeningDate()) +"#"+ String.valueOf(interestRate)+"#"+ String.valueOf(startingAmount)+"#"+String.valueOf(term)+"/";
     }
 
     /**
