@@ -73,17 +73,10 @@ public class accountMaintenance {
 
         if (!fXML.exist("SavingsAccount.xml")) { //Si el archivo no existe
             fXML.createXML("SavingsAccountXML", "SavingsAccount");
-            if (!accountList.isEmpty()) {
-//                writeAccounts();
-            }
         } else {
             fXML.deleteFile("SavingsAccount");
             fXML.createXML("SavingsAccountXML", "SavingsAccount");
-            if (!accountList.isEmpty()) {
-//                writeAccounts();
-            }
         }
-
         if (!fXML.exist("TermAccount.xml")) { //Si el archivo no existe
             fXML.createXML("TermAccountXML", "TermAccount");
             if (!accountList.isEmpty()) {
@@ -119,11 +112,7 @@ public class accountMaintenance {
                     try {
 
                         fXML.writeXML("SavingsAccount.xml", "SavingsAccount", a.dataName(), a.data());
-                    } catch (TransformerException ex) {
-                        Logger.getLogger(clientMaintenance.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (SAXException ex) {
-                        Logger.getLogger(clientMaintenance.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (IOException ex) {
+                    } catch (TransformerException | SAXException | IOException ex) {
                         Logger.getLogger(clientMaintenance.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
@@ -133,11 +122,7 @@ public class accountMaintenance {
                     try {
 
                         fXML.writeXML("TermAccount.xml", "TermAccount", a.dataName(), a.data());
-                    } catch (TransformerException ex) {
-                        Logger.getLogger(clientMaintenance.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (SAXException ex) {
-                        Logger.getLogger(clientMaintenance.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (IOException ex) {
+                    } catch (TransformerException | SAXException | IOException ex) {
                         Logger.getLogger(clientMaintenance.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }

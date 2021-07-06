@@ -161,7 +161,7 @@ public class FileXML {
         LinkedList<Account> aList = new LinkedList<>();
 
         try {
-            File inputFile = new File("SavingsAccount.xml");
+            File inputFile = new File("SavingsAccount.xml");          
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
